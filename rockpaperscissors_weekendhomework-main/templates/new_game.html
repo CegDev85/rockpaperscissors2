@@ -1,0 +1,16 @@
+
+{% extends "base.html"%}
+
+<!-- {% block content %} -->
+<hgroup>
+    <h2>R-P-S</h2>
+    <h3>Enter your name and choice</h3>
+</hgroup>
+
+<form action="/rps/play/rules" methods="POST">
+<label for="title">Name</label>
+<input type="text" id="title" name="title"> 
+<input type="submit" value="Enter">
+</form>
+
+<!-- {% endblock %} -->
