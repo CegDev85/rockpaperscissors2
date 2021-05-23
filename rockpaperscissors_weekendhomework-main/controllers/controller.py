@@ -21,6 +21,7 @@ def game_rules():
 # def play(choice_1,choice_2):
 #     return f"The winner is {game.play(choice_1,choice_2)}"
 
-@app.route('/rps/play/<choice_1>/<choice_2>')
-def play(choice_1,choice_2):
-    return f"The winner is {game.play(choice_1,choice_2)}"
+# @app.route('/rps/play/<choice_1>/<choice_2>')
+@app.route('/winner')
+def winner():
+    return render_template('winner.html')
