@@ -3,7 +3,7 @@ from flask.wrappers import Request
 from werkzeug.utils import redirect
 from app import app
 from modules import game
-from modules import player
+from modules.player import Player
 
 @app.route('/rps')
 def index():
@@ -24,4 +24,10 @@ def game_rules():
 # @app.route('/rps/play/<choice_1>/<choice_2>')
 @app.route('/winner')
 def winner():
-    return render_template('winner.html')
+    player_1 = request.form['player-1']
+    player1_choice = request.form['choice-1']
+    player_2 = request.form['player-2"']
+    player2_choice = request.form['choice-2']
+    player1 = Player(player_1,player1_choice)
+    player2 = Player(player_2,player2_choice)
+    return f"The winner is {game.play(player1_choice,player2_choice)}"
